@@ -468,6 +468,21 @@ body{
     </div>
 </body>
 <script>
+const text = document.querySelectorAll('.hiddentext')
+const dustsucker = document.querySelector('#elektrokoste');
+const wand = document.querySelector('.wand');
+const correctnum = "284091888";
+const wheelleft = document.querySelector('.wheell')
+const wheelright = document.querySelector('.wheelr')
+const truck = document.querySelector('.truck')
+const insta = document.querySelector('.insta')
+const trashcap = document.querySelector('.trashcap');
+const trashcont = document.querySelector('.trashcontainercontainer')
+const fintext = document.querySelector('#finishtext')
+var display = document.querySelector('.div11');
+var keys = document.querySelectorAll('.key');
+let stopwand = true;
+
 function openProj(evt, projName) { //kdyz stisknu nejaky tab tak se mi spusti tahle funkce
   var i;
   var tabcontent;
@@ -482,27 +497,21 @@ function openProj(evt, projName) { //kdyz stisknu nejaky tab tak se mi spusti ta
   }
   document.getElementById(projName).style.display = "block"; //pak zobrazi ten tab ktery jsem kliknul 
   evt.currentTarget.className += " active";//a pak zbarvi to tlacitko toho tabu ktere sem kliklul
+  if (projName !== "Wand"){
+    dustsucker.classList.remove("kosteanimace");
+    wand.classList.remove("glowingwand")
+    text.forEach(t => t.classList.remove("hiddentext2"));
 }
-const text = document.querySelectorAll('.hiddentext')
-const dustsucker = document.querySelector('#elektrokoste');
-const wand = document.querySelector('.wand');
+}
+
 wand.addEventListener("click", vacuum);
 function vacuum(){
+    stopwand = false;
     dustsucker.classList.add("kosteanimace");
     wand.classList.add("glowingwand")
     text.forEach(t => t.classList.add("hiddentext2"));
-}
 
-const correctnum = "284091888";
-const wheelleft = document.querySelector('.wheell')
-const wheelright = document.querySelector('.wheelr')
-const truck = document.querySelector('.truck')
-const insta = document.querySelector('.insta')
-const trashcap = document.querySelector('.trashcap');
-const trashcont = document.querySelector('.trashcontainercontainer')
-const fintext = document.querySelector('#finishtext')
-var display = document.querySelector('.div11');
-var keys = document.querySelectorAll('.key');
+}
 
 
 for (var i = 0; i < keys.length; i++) {
@@ -561,6 +570,7 @@ function correct() {
         }
     }
 }
+
 }
 </script>
 </html>
