@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <style>
-            #wrapper2{
+            #wrapper2 {
                 height: 100vh;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: row;
-                gap:10rem;
+                gap: 10rem;
             }
             #wrapper1 {
                 height: 100vh;
@@ -35,59 +35,51 @@
             }
             #elektrokoste {
                 height: 10rem;
-                
-                
-                
             }
             .kosteanimace {
                 animation: zametani 3s alternate infinite,
                     toceni 0.5s infinite alternate;
                 animation-timing-function: linear;
-                
             }
-            .wand{
-                
-                background:transparent;
+            .wand {
+                background: transparent;
                 position: absolute;
-                width: 7rem;   
+                width: 7rem;
                 height: 7rem;
                 top: 15%;
                 right: 12rem;
                 z-index: 400;
-                
             }
-            .glowingwand{
+            .glowingwand {
                 border-radius: 50%;
                 background-color: rgb(245, 96, 151);
-                filter:blur(5rem);
+                filter: blur(5rem);
                 animation: glowup 0.75s linear infinite alternate;
             }
-            #whythehellcaninothavesubelementswithanimg{
-                
-                position:relative;
+            #whythehellcaninothavesubelementswithanimg {
+                position: relative;
                 display: inline-block;
             }
-            #sailormoon{
-                width:30rem;
+            #sailormoon {
+                width: 30rem;
                 z-index: 100;
             }
-            .hiddentext{ 
-                opacity:0%;
-                color:aqua;
-                
+            .hiddentext {
+                opacity: 0%;
+                color: aqua;
             }
-            .hiddentext2{
+            .hiddentext2 {
                 animation: glowup 5s forwards linear;
             }
-            body{
+            body {
                 background: #000000;
             }
             @keyframes glowup {
-                0%{
+                0% {
                     opacity: 20%;
                 }
-                
-                100%{
+
+                100% {
                     opacity: 100%;
                 }
             }
@@ -116,37 +108,47 @@
                     rotate: -30deg;
                 }
             }
-
         </style>
     </head>
     <body>
         <div id="wrapper2">
-        <div id="wrapper1">
-            <div id="trojuhelnik"></div>
-            <div id="obdelnik">
-                <img id="elektrokoste" class="koste" src="https://pngimg.com/d/robot_vacuum_PNG12.png" alt="why did i decide to embed a url image... i could have just used a local file"/>
+            <div id="wrapper1">
+                <div id="trojuhelnik"></div>
+                <div id="obdelnik">
+                    <img
+                        id="elektrokoste"
+                        class="koste"
+                        src="robot.png"
+                        alt="why did i decide to embed a url image... i could have just used a local file"
+                    />
+                </div>
             </div>
-            
+            <div id="whythehellcaninothavesubelementswithanimg">
+                <h1 style="color: white">click on the wand to see magic</h1>
+                <h2 class="hiddentext">
+                    apparently her secret spell is... turning on a vacuum
+                    cleaner
+                </h2>
+                <h3 class="hiddentext">i guess this is sexism...</h3>
+                <img
+                    id="sailormoon"
+                    src="sailormoon.png"
+                    alt="why did i decide to embed a url image... i could have just used a local file"
+                />
+                <div class="wand"></div>
+            </div>
         </div>
-        <div id="whythehellcaninothavesubelementswithanimg">
-            <h1 style="color: white;">click on the wand to see magic</h1>
-            <h2 class="hiddentext">apparently her secret spell is... turning on a vacuum cleaner</h2>
-            <h3 class="hiddentext">i guess this is sexism...</h3>
-            <img id="sailormoon" src="https://i.ibb.co/HQBxMBm/pngwing-com-2.png" alt="why did i decide to embed a url image... i could have just used a local file"/>
-            <div class="wand"></div>
-        </div>
-        </div>
-        
-    <script>
-        const text = document.querySelectorAll('.hiddentext')
-        const dustsucker = document.querySelector('#elektrokoste');
-        const wand = document.querySelector('.wand');
-        wand.addEventListener("click", vacuum);
-        function vacuum(){
-            dustsucker.classList.add("kosteanimace");
-            wand.classList.add("glowingwand")
-            text.forEach(t => t.classList.add("hiddentext2"));
-        }
-    </script>
+
+        <script>
+            const text = document.querySelectorAll(".hiddentext");
+            const dustsucker = document.querySelector("#elektrokoste");
+            const wand = document.querySelector(".wand");
+            wand.addEventListener("click", vacuum);
+            function vacuum() {
+                dustsucker.classList.add("kosteanimace");
+                wand.classList.add("glowingwand");
+                text.forEach((t) => t.classList.add("hiddentext2"));
+            }
+        </script>
     </body>
 </html>
